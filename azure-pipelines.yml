@@ -1,5 +1,9 @@
 resources:
 - repo: self
+
+variables:
+- group: staging-storage-account
+
 phases:
 - phase: Phase_13
   displayName: Extract Metadata
@@ -237,8 +241,8 @@ phases:
        echo -n $HOMEBREW_UPSTREAM_URL > $BUILD_STAGINGDIRECTORY/github/upstream_url
     displayName: 'Upload Azure CLI Release Candidate Source For Homebrew'
     env:
-      AZURE_STORAGE_KEY: "{insert storage key here}"
-      AZURE_STORAGE_ACCOUNT: "{insert storage account name here}"
+      AZURE_STORAGE_KEY: $STAGING_ACCOUNT_KEY
+      AZURE_STORAGE_ACCOUNT: $STAGING_ACCOUNT_NAME
 
   - bash: |
        #!/bin/bash
