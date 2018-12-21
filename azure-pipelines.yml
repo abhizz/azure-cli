@@ -222,7 +222,7 @@ phases:
 
        CLI_VERSION=`cat $SYSTEM_ARTIFACTSDIRECTORY/metadata/version`
        TAR_NAME=rc$CLI_VERSION.tar.gz
-       CONTAINER_NAME=archive/$(Build.BuildNumber)
+       CONTAINER_NAME=archive-devops/$(Build.BuildNumber)
        echo Container: $CONTAINER_NAME TAR: $TAR_NAME
 
        mkdir -p $BUILD_STAGINGDIRECTORY/github/ >/dev/null 2>&1
